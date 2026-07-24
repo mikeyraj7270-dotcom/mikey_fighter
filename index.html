@@ -5,49 +5,252 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Mikey Fighter</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; line-height: 1.6; }
-    header { padding: 24px; background:#111; color:#fff; }
-    main { padding: 24px; max-width: 900px; margin: 0 auto; }
-    .card { border:1px solid #eee; padding:16px; border-radius:12px; margin: 16px 0; }
-    .muted { color:#555; }
+    /* ===== NEW DESIGN ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 40px;
+      padding: 40px 35px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 48px;
+      font-weight: 800;
+      background: linear-gradient(to right, #f7971e, #ffd200);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -1px;
+    }
+
+    header .sub {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 8px;
+      letter-spacing: 1px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 24px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      background: rgba(255, 255, 255, 0.09);
+      transform: translateY(-3px);
+      border-color: rgba(255, 215, 0, 0.2);
+    }
+
+    .card h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 14px;
+      letter-spacing: -0.3px;
+    }
+
+    .card h2 span {
+      background: linear-gradient(to right, #f7971e, #ffd200);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .card p,
+    .card li {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .card strong {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* Contact details */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .contact-item .icon {
+      font-size: 22px;
+    }
+
+    .contact-item a {
+      color: #ffd200;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* List styling */
+    .skills-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .skills-list li {
+      background: rgba(255, 215, 0, 0.12);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 15px;
+      color: #ffd200;
+      border: 1px solid rgba(255, 215, 0, 0.15);
+      font-weight: 500;
+    }
+
+    /* Chat section */
+    .chat-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 215, 0, 0.1);
+      padding: 10px 20px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 215, 0, 0.15);
+      color: #ffd200;
+      font-weight: 500;
+      margin-top: 6px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        padding: 28px 18px;
+      }
+      header h1 {
+        font-size: 34px;
+      }
+      .card {
+        padding: 18px 16px;
+      }
+      .skills-list li {
+        font-size: 13px;
+        padding: 6px 14px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>Mikey Fighter</h1>
-    <p class="muted">Student • Designer • Available for work</p>
-  </header>
+  <div class="container">
 
-  <main>
-    <div class="card" id="about">
-      <h2>About Me</h2>
-      <p>Hi, I'm Mikey! I'm learning web development and building my first website.</p>
-    </div>
+    <header>
+      <h1>Mikey Fighter</h1>
+      <p class="sub">Web Creator • Designer • Problem Solver</p>
+    </header>
 
-    <div class="card" id="contact">
-      <h2>Contact</h2>
-      <p><strong>Contact No:</strong> +91 12345 67890</p>
-      <p><strong>Email:</strong> mikey@email.com</p>
-    </div>
+    <main>
 
-    <div class="card">
-      <h2>Chat with Me</h2>
-      <p>Use the chat icon in the bottom corner to message me.</p>
-    </div>
-  </main><!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a62ffeb38c7da1d41460e68/1ju9bfco3';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+      <!-- ===== ABOUT ME ===== -->
+      <div class="card" id="about">
+        <h2>👋 <span>About Me</span></h2>
+        <p>
+          Hi, I'm a web creator passionate about building clean, functional, and visually engaging websites. 
+          I enjoy turning ideas into real digital experiences — from simple landing pages to full web apps. 
+          I love learning new tools and technologies, and I'm always looking for ways to make the web a little 
+          more beautiful and user-friendly.
+          <br><br>
+          When I'm not coding, I'm usually exploring design trends, experimenting with new frameworks, 
+          or sketching out my next project idea.
+        </p>
+      </div>
+
+      <!-- ===== SKILLS ===== -->
+      <div class="card" id="skills">
+        <h2>⚡ <span>Skills</span></h2>
+        <ul class="skills-list">
+          <li>HTML &amp; CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>UI/UX Design</li>
+          <li>Git &amp; GitHub</li>
+          <li>Cloudflare Pages</li>
+        </ul>
+      </div>
+
+      <!-- ===== CONTACT ===== -->
+      <div class="card" id="contact">
+        <h2>📬 <span>Contact</span></h2>
+        <div class="contact-item">
+          <span class="icon">📞</span>
+          <p><strong>Contact No:</strong> +91 12345 67890</p>
+        </div>
+        <div class="contact-item">
+          <span class="icon">✉️</span>
+          <p><strong>Email:</strong> <a href="mailto:mikey@email.com">mikey@email.com</a></p>
+        </div>
+      </div>
+
+      <!-- ===== CHAT ===== -->
+      <div class="card">
+        <h2>💬 <span>Chat with Me</span></h2>
+        <p>Use the chat icon in the bottom corner to message me anytime.</p>
+        <div class="chat-badge">
+          💬 Click the bubble → Let's talk!
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- ===== TAWK.TO CHAT ===== -->
+  <!-- Start of Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || { t: {} },
+      Tawk_LoadStart = new Date();
+    (function() {
+      var s1 = document.createElement("script"),
+        s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/6a62ffeb38c7da1d41460e68/1ju9bfco3';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!-- End of Tawk.to Script -->
 
 </body>
 </html>
